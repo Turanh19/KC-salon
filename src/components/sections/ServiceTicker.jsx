@@ -41,7 +41,7 @@ export default function ServiceTicker() {
 
   return (
     <div className="relative overflow-hidden bg-zinc-600 py-3.5">
-      <div className="flex animate-marquee whitespace-nowrap will-change-transform">
+      <div className="flex animate-marquee whitespace-nowrap will-change-transform" style={{ animationDuration: '8s' }}>
         {[...list, ...list].map((item, i) => (
           <span
             key={i}

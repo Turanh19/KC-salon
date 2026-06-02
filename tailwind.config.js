@@ -61,7 +61,7 @@ export default {
         'fade-up': 'fade-up 0.7s ease forwards',
         shimmer: 'shimmer 6s linear infinite',
         'float-slow': 'float-slow 7s ease-in-out infinite',
-        marquee: 'marquee 15s linear infinite',
+        marquee: 'marquee 8s linear infinite',
       },
     },
   },
