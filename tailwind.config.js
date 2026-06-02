@@ -52,11 +52,16 @@ export default {
           '0%,100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-12px)' },
         },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
       },
       animation: {
         'fade-up': 'fade-up 0.7s ease forwards',
         shimmer: 'shimmer 6s linear infinite',
         'float-slow': 'float-slow 7s ease-in-out infinite',
+        marquee: 'marquee 35s linear infinite',
       },
     },
   },

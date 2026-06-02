@@ -1,4 +1,5 @@
 import Hero from '../components/sections/Hero.jsx'
+import ServiceTicker from '../components/sections/ServiceTicker.jsx'
 import Stats from '../components/sections/Stats.jsx'
 import About from '../components/sections/About.jsx'
 import CategoriesOverview from '../components/sections/CategoriesOverview.jsx'
@@ -14,6 +15,9 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <div className="py-10 bg-cream" />
+      <ServiceTicker />
+      <div className="py-10 bg-cream" />
       <Stats />
       <About />
       <CategoriesOverview />
