@@ -155,7 +155,7 @@ export default function Booking() {
 
   return (
     <section className="relative overflow-x-hidden bg-cream pb-24 pt-36">
-      <div className="container-luxe">
+      <div className="container-luxe overflow-x-hidden">
         <div className="mx-auto max-w-2xl text-center">
           <span className="eyebrow flex items-center justify-center gap-3">
             <span className="h-px w-8 bg-gold-500/70" /> {t('Reserva tu cita', 'Book your appointment')} <span className="h-px w-8 bg-gold-500/70" />
@@ -173,7 +173,7 @@ export default function Booking() {
         </div>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[1.6fr_1fr] [&>*]:min-w-0">
-          <form onSubmit={handleSubmit} className="card min-w-0 overflow-hidden p-6 sm:p-9">
+          <form onSubmit={handleSubmit} className="card min-w-0 w-full overflow-hidden p-6 sm:p-9">
             <fieldset>
               <legend className="flex items-center gap-2 font-display text-xl font-bold text-ink">
                 <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gold-gradient text-sm text-ink">1</span>
