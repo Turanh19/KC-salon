@@ -1,15 +1,23 @@
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Calendar, ArrowRight, Star, ShieldCheck } from 'lucide-react'
 import { useLang } from '../../i18n/LanguageContext.jsx'
 
 export default function Hero() {
   const { t } = useLang()
+  const videoRef = useRef(null)
+
+  useEffect(() => {
+    const v = videoRef.current
+    if (!v) return
+    v.play().catch(() => {})
+  }, [])
   return (
     <section className="relative overflow-hidden bg-ink text-cream">
       <div className="pointer-events-none absolute -left-32 top-10 h-96 w-96 rounded-full bg-gold-500/15 blur-[120px]" />
       <div className="pointer-events-none absolute -right-20 bottom-0 h-[28rem] w-[28rem] rounded-full bg-gold-400/10 blur-[120px]" />
 
-      <div className="container-luxe relative grid min-h-screen items-center gap-12 pb-16 pt-36 lg:grid-cols-2 lg:gap-8 lg:pb-24">
+      <div className="container-luxe relative grid items-center gap-12 pb-16 pt-36 lg:grid-cols-2 lg:gap-8 lg:pb-24" style={{minHeight: 'max(100svh, 600px)'}}>
         <div className="max-w-xl">
           <span className="eyebrow flex items-center gap-3 text-gold-300">
             <span className="h-px w-8 bg-gold-400/70" />
@@ -57,6 +65,7 @@ export default function Hero() {
           <div className="relative">
             <div className="relative overflow-hidden rounded-[1.75rem] shadow-luxe">
               <video
+                ref={videoRef}
                 src="/Herovideo.mp4"
                 autoPlay
                 muted
