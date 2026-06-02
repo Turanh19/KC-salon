@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Calendar, ArrowRight, Star, ShieldCheck } from 'lucide-react'
 import { useLang } from '../../i18n/LanguageContext.jsx'
@@ -6,15 +6,31 @@ import { useLang } from '../../i18n/LanguageContext.jsx'
 export default function Hero() {
   const { t } = useLang()
   const videoRef = useRef(null)
-
-  useEffect(() => {
-    const v = videoRef.current
-    if (!v) return
-    v.play().catch(() => {})
-  }, [])
+  const [loadVideo, setLoadVideo] = useState(false)
 
   const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches
   const videoSrc = isMobile ? '/Herovideo-mobile.mp4' : '/Herovideo.mp4'
+
+  useEffect(() => {
+    let id
+    const start = () => setLoadVideo(true)
+    if ('requestIdleCallback' in window) {
+      id = window.requestIdleCallback(start, { timeout: 2500 })
+    } else {
+      id = window.setTimeout(start, 1200)
+    }
+    return () => {
+      if ('cancelIdleCallback' in window && id) window.cancelIdleCallback(id)
+      else window.clearTimeout(id)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!loadVideo) return
+    const v = videoRef.current
+    if (!v) return
+    v.play().catch(() => {})
+  }, [loadVideo])
   return (
     <section className="relative overflow-hidden bg-ink text-cream">
       <div className="pointer-events-none absolute -left-32 top-10 h-96 w-96 rounded-full bg-gold-500/15 md:blur-[120px] blur-[60px]" />
@@ -67,17 +83,28 @@ export default function Hero() {
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
           <div className="relative">
             <div className="relative overflow-hidden rounded-[1.75rem] shadow-luxe">
-              <video
-                ref={videoRef}
-                src={videoSrc}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                poster="/Owner.jpg"
-                className="aspect-[4/5] w-full object-cover"
-              />
+              {loadVideo ? (
+                <video
+                  ref={videoRef}
+                  src={videoSrc}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  poster="/Owner.jpg"
+                  className="aspect-[4/5] w-full object-cover"
+                />
+              ) : (
+                <img
+                  src="/Owner.jpg"
+                  alt="KC Salon"
+                  width="900"
+                  height="1125"
+                  fetchPriority="high"
+                  className="aspect-[4/5] w-full object-cover"
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
             </div>
 
