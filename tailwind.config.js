@@ -25,7 +25,7 @@ export default {
       },
       fontFamily: {
         serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        display: ['Anton', 'Impact', 'sans-serif'],
+        display: ['Barlow', 'Impact', 'sans-serif'],
         sans: ['Montserrat', 'system-ui', 'sans-serif'],
       },
       letterSpacing: {
