@@ -40,7 +40,7 @@ export default function ServiceTicker() {
   const list = ITEMS[lang] ?? ITEMS.es
 
   return (
-    <div className="relative overflow-hidden border-y border-gold-700/30 bg-ink-soft py-3.5">
+    <div className="relative overflow-hidden bg-zinc-600 py-3.5">
       <div className="flex animate-marquee whitespace-nowrap will-change-transform">
         {[...list, ...list].map((item, i) => (
           <span
