@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream text-ink font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-gold-300/60 text-ink;
+  }
+}
+
+@layer components {
+  .container-luxe {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+  .text-gradient-gold {
+    @apply bg-gold-gradient bg-clip-text text-transparent;
+    background-size: 200% auto;
+  }
+  .eyebrow {
+    @apply font-sans text-xs font-semibold uppercase tracking-luxe text-gold-600;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-gold {
+    @apply btn bg-gradient-to-r from-gold-600 via-gold-400 to-gold-600 text-ink shadow-gold hover:shadow-luxe hover:-translate-y-0.5;
+    background-size: 200% auto;
+  }
+  .btn-gold:hover {
+    background-position: right center;
+  }
+  .btn-dark {
+    @apply btn bg-ink text-cream hover:bg-ink-soft hover:-translate-y-0.5;
+  }
+  .btn-outline {
+    @apply btn border border-ink/20 bg-transparent text-ink hover:border-gold-500 hover:text-gold-700;
+  }
+  .btn-ghost-gold {
+    @apply btn border border-gold-400/60 text-gold-200 hover:bg-gold-400 hover:text-ink;
+  }
+  .card {
+    @apply rounded-2xl border border-ink/5 bg-white shadow-[0_18px_50px_-30px_rgba(12,12,13,0.4)];
+  }
+  .input {
+    @apply w-full rounded-xl border border-ink/10 bg-white px-4 py-3 text-sm text-ink shadow-sm transition placeholder:text-ink-muted/60 focus:border-gold-400 focus:outline-none focus:ring-2 focus:ring-gold-200;
+  }
+  .hairline {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-gold-400/60 to-transparent;
+  }
+}
+
+/* Thin elegant scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #faf7f0;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#c79434, #8f6224);
+  border-radius: 999px;
+  border: 2px solid #faf7f0;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
