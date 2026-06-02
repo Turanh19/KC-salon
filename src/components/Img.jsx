@@ -23,6 +23,8 @@ export default function Img({ src, alt = '', className = '', style, ...rest }) {
       alt={alt}
       style={style}
       className={className}
+      loading="lazy"
+      decoding="async"
       onError={() => setFailed(true)}
       {...rest}
     />

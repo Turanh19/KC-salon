@@ -62,6 +62,8 @@ export default function Hero() {
                 muted
                 loop
                 playsInline
+                preload="metadata"
+                poster="/Owner.jpg"
                 className="aspect-[4/5] w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
