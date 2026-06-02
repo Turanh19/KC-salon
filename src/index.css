@@ -6,6 +6,10 @@
   html {
     scroll-behavior: smooth;
   }
+  .backdrop-blur-md {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
   body {
     @apply bg-cream text-ink font-sans antialiased;
   }
