@@ -37,7 +37,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute -left-32 top-10 h-96 w-96 rounded-full bg-gold-500/15 md:blur-[120px] blur-[60px]" />
       <div className="pointer-events-none absolute -right-20 bottom-0 h-[28rem] w-[28rem] rounded-full bg-gold-400/10 md:blur-[120px] blur-[60px]" />
 
-      <div className="container-luxe relative grid items-center gap-12 pb-16 pt-36 lg:grid-cols-2 lg:gap-8 lg:pb-24" style={{minHeight: 'max(100svh, 600px)'}}>
+      <div className="container-luxe relative grid items-center gap-12 pb-16 pt-24 lg:grid-cols-2 lg:gap-8 lg:pb-24" style={{minHeight: 'max(100svh, 600px)'}}>
         <div className="max-w-xl">
           <span className="eyebrow flex items-center gap-3 text-gold-300">
             <span className="h-px w-8 bg-gold-400/70" />

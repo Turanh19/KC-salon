@@ -85,7 +85,7 @@ export default function Navbar() {
 
       {/* Main bar */}
       <nav className={`transition-colors duration-300 ${barBg}`}>
-        <div className="container-luxe flex h-20 items-center justify-between">
+        <div className="container-luxe flex h-20 items-center justify-between px-3 sm:px-8 lg:px-12">
           <Logo light={transparent} />
 
           <div className="hidden items-center gap-8 lg:flex">
