@@ -12,10 +12,13 @@ export default function Hero() {
     if (!v) return
     v.play().catch(() => {})
   }, [])
+
+  const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches
+  const videoSrc = isMobile ? '/Herovideo-mobile.mp4' : '/Herovideo.mp4'
   return (
     <section className="relative overflow-hidden bg-ink text-cream">
-      <div className="pointer-events-none absolute -left-32 top-10 h-96 w-96 rounded-full bg-gold-500/15 blur-[120px]" />
-      <div className="pointer-events-none absolute -right-20 bottom-0 h-[28rem] w-[28rem] rounded-full bg-gold-400/10 blur-[120px]" />
+      <div className="pointer-events-none absolute -left-32 top-10 h-96 w-96 rounded-full bg-gold-500/15 md:blur-[120px] blur-[60px]" />
+      <div className="pointer-events-none absolute -right-20 bottom-0 h-[28rem] w-[28rem] rounded-full bg-gold-400/10 md:blur-[120px] blur-[60px]" />
 
       <div className="container-luxe relative grid items-center gap-12 pb-16 pt-36 lg:grid-cols-2 lg:gap-8 lg:pb-24" style={{minHeight: 'max(100svh, 600px)'}}>
         <div className="max-w-xl">
@@ -66,7 +69,7 @@ export default function Hero() {
             <div className="relative overflow-hidden rounded-[1.75rem] shadow-luxe">
               <video
                 ref={videoRef}
-                src="/Herovideo.mp4"
+                src={videoSrc}
                 autoPlay
                 muted
                 loop
