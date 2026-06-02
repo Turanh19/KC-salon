@@ -7,6 +7,7 @@ export default function Hero() {
   const { t } = useLang()
   const videoRef = useRef(null)
   const [loadVideo, setLoadVideo] = useState(false)
+  const [videoReady, setVideoReady] = useState(false)
 
   const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches
   const videoSrc = isMobile ? '/Herovideo-mobile.mp4' : '/Herovideo.mp4'
@@ -83,7 +84,15 @@ export default function Hero() {
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
           <div className="relative">
             <div className="relative overflow-hidden rounded-[1.75rem] shadow-luxe">
-              {loadVideo ? (
+              <img
+                src="/Owner.webp"
+                alt="KC Salon"
+                width="1030"
+                height="1280"
+                fetchPriority="high"
+                className="aspect-[4/5] w-full object-cover"
+              />
+              {loadVideo && (
                 <video
                   ref={videoRef}
                   src={videoSrc}
@@ -92,17 +101,11 @@ export default function Hero() {
                   loop
                   playsInline
                   preload="auto"
-                  poster="/Owner.jpg"
-                  className="aspect-[4/5] w-full object-cover"
-                />
-              ) : (
-                <img
-                  src="/Owner.jpg"
-                  alt="KC Salon"
-                  width="900"
-                  height="1125"
-                  fetchPriority="high"
-                  className="aspect-[4/5] w-full object-cover"
+                  poster="/Owner.webp"
+                  onCanPlay={() => setVideoReady(true)}
+                  className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
+                    videoReady ? 'opacity-100' : 'opacity-0'
+                  }`}
                 />
               )}
               <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />

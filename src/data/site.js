@@ -89,7 +89,7 @@ export const team = [
       es: 'Visionaria detrás de Estética by Keity, especialista en tratamientos faciales y láser de alta tecnología.',
       en: 'The visionary behind Estética by Keity, specializing in facial treatments and high-tech laser.',
     },
-    image: '/Owner.jpg',
+    image: '/Owner.webp',
     founder: true,
   },
   {

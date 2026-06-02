@@ -27,7 +27,7 @@ export default function About() {
         <Reveal className="relative">
           <div className="relative overflow-hidden rounded-[1.75rem] shadow-luxe">
             <Img
-              src="/Owner.jpg"
+              src="/Owner.webp"
               alt={t('Keity Cantillo — KC Salon', 'Keity Cantillo — KC Salon')}
               className="aspect-[4/5] w-full object-cover"
             />
