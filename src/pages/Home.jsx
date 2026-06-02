@@ -16,6 +16,7 @@ export default function Home() {
     <>
       <Hero />
       <ServiceTicker />
+      <div className="py-8 bg-cream" />
       <Stats />
       <About />
       <CategoriesOverview />
