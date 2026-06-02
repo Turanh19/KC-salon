@@ -10,7 +10,7 @@ export default function Hero() {
   const [videoReady, setVideoReady] = useState(false)
 
   const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 767px)').matches
-  const videoSrc = isMobile ? '/Herovideo-mobile.mp4' : '/Herovideo.mp4'
+  const videoSrc = isMobile ? '/hero-mobile.mp4' : '/hero.mp4'
 
   useEffect(() => {
     let id
@@ -85,10 +85,10 @@ export default function Hero() {
           <div className="relative">
             <div className="relative overflow-hidden rounded-[1.75rem] shadow-luxe">
               <img
-                src="/Owner.webp"
+                src="/hero-poster.webp"
                 alt="KC Salon"
-                width="1030"
-                height="1280"
+                width="480"
+                height="854"
                 fetchPriority="high"
                 className="aspect-[4/5] w-full object-cover"
               />
@@ -101,7 +101,7 @@ export default function Hero() {
                   loop
                   playsInline
                   preload="auto"
-                  poster="/Owner.webp"
+                  poster="/hero-poster.webp"
                   onCanPlay={() => setVideoReady(true)}
                   className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
                     videoReady ? 'opacity-100' : 'opacity-0'
