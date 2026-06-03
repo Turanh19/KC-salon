@@ -81,7 +81,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+        <div className="relative mx-auto w-full max-w-md lg:max-w-none lg:mt-16">
           <div className="relative">
             <div className="relative overflow-hidden rounded-[1.75rem] shadow-luxe">
               <img
